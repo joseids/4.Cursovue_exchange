@@ -31,9 +31,9 @@
           <b>#{{ a.rank }}</b>
         </td>
         <td>{{ a.name }}</td>
-        <td>{{ a.priceuUsd }}</td>
+        <td>{{ a.priceUsd }}</td>
         <td>{{ a.marketCapUsd }}</td>
-        <td>{{ a.changePercet24Hr }}</td>
+        <td>{{ a.changePercent24Hr }}</td>
         <td class="hidden sm:block"></td>
       </tr>
     </tbody>
