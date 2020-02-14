@@ -8,7 +8,9 @@
             PlatziExchange
           </span>
         </div>
-        <div class="hidden sm:block w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+        <div
+          class="hidden sm:block w-full block flex-grow lg:flex lg:items-center lg:w-auto"
+        >
           <div class="text-sm lg:flex-grow"></div>
         </div>
       </nav>
@@ -17,10 +19,10 @@
 </template>
 
 <script>
-import PxIcon from "@/components/PxIcon";
+import PxIcon from '@/components/PxIcon'
 
 export default {
-  name: "PxHeader",
+  name: 'PxHeader',
   components: { PxIcon }
-};
+}
 </script>
