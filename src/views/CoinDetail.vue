@@ -1,11 +1,18 @@
 <template>
   <div class="flex-col">
-    <template>
+    <template v-if="asset.id">
       <div class="flex flex-col sm:flex-row justify-around items-center">
         <div class="flex flex-col items-center">
-          <img class="w-20 h-20 mr-5" />
+          <img
+            :src="
+              `https://static.coincap.io/assets/icons/${asset.symbol.toLowerCase()}@2x.png`
+            "
+            class="w-20 h-20 mr-5"
+            :alt="asset.name"
+          />
           <h1 class="text-5xl">
-            <small class="sm:mr-2 text-gray-500"></small>
+            {{ asset.name }}
+            <small class="sm:mr-2 text-gray-500">{{ asset.symbol }}</small>
           </h1>
         </div>
 
@@ -61,3 +68,27 @@
     </template>
   </div>
 </template>
+
+<script>
+import api from '@/api'
+export default {
+  name: 'CoinDetail',
+
+  data() {
+    return {
+      asset: {}
+    }
+  },
+
+  created() {
+    this.getCoin()
+  },
+
+  methods: {
+    getCoin() {
+      const id = this.$route.params.id
+      api.getAsset(id).then(asset => (this.asset = asset))
+    }
+  }
+}
+</script>
